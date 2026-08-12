@@ -1,10 +1,10 @@
 "use strict";
 
-let guess = document.querySelector(".guess");
-let message = document.querySelector(".message");
-let score = document.querySelector(".scores");
-let highscore = document.querySelector(".highscoreNum");
-let scores = 20;
+const guess = document.querySelector(".guess");
+const message = document.querySelector(".message");
+const score = document.querySelector(".scores");
+const highscore = document.querySelector(".highscoreNum");
+const scores = 20;
 
 let number = document.querySelector(".number");
 let num = Math.trunc(Math.random() * 20) + 1;
