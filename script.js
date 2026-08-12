@@ -11,13 +11,20 @@ let num = Math.trunc(Math.random() * 20) + 1;
 console.log(num);
 // number.textContent = num;
 
-// const guesses = function () {
+// const guessNum = function () {
 //   if (scores > 0) {
-//     message.textContent = "too high";
+//     if (guess > num) {
+//       message.textContent = "too high";
+//       scores--;
+//       score.textContent = scores;
+//     }
+//   } else if (guess < num) {
+//     message.textContent = "too less";
 //     scores--;
 //     score.textContent = scores;
 //   } else {
 //     message.textContent = " You're lost the game";
+//     document.querySelector("body").style.backgroundColor = "#DA2C43";
 //   }
 // };
 
@@ -35,21 +42,10 @@ check.addEventListener("click", function () {
     highscore.textContent = scores;
     document.querySelector("body").style.backgroundColor = "#7cfc00";
     number.style.width = "300px";
-    // ++++++++++++++++++++++++++++++++++++++++++too high
-  } else if (guess > num) {
-    // guesses();
-    if (scores > 0) {
-      message.textContent = "too high";
-      scores--;
-      score.textContent = scores;
-    } else {
-      message.textContent = " You're lost the game";
-      document.querySelector("body").style.backgroundColor = "#DA2C43";
-    }
-    // +++++++++++++++++++++++++++++++++++++++++++++++++too low
-  } else if (guess < num) {
-    if (scores > 0) {
-      message.textContent = "too less";
+  } else if (guess !== num) {
+    //+++++++++++++++++++++++++++++++++++++ wwen num is wrong
+    if (scores > 1) {
+      message.textContent = guess > num ? "too high...." : "too low.....";
       scores--;
       score.textContent = scores;
     } else {
@@ -58,6 +54,29 @@ check.addEventListener("click", function () {
     }
   }
 });
+// } else if (guess > num) {
+// ++++++++++++++++++++++++++++++++++++++++++too high
+// guesses();
+// if (scores > 0) {
+//   message.textContent = "too high";
+//   scores--;
+//   score.textContent = scores;
+// } else {
+//   message.textContent = " You're lost the game";
+//   document.querySelector("body").style.backgroundColor = "#DA2C43";
+// }
+// +++++++++++++++++++++++++++++++++++++++++++++++++too low
+//   } else if (guess < num) {
+//     if (scores > 0) {
+//       message.textContent = "too less";
+//       scores--;
+//       score.textContent = scores;
+//     } else {
+//       message.textContent = " You're lost the game";
+//       document.querySelector("body").style.backgroundColor = "#DA2C43";
+//     }
+//   }
+// });
 
 let again = document.querySelector(".again");
 again.addEventListener("click", function () {
