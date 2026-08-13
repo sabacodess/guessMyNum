@@ -4,7 +4,7 @@ const guess = document.querySelector(".guess");
 const message = document.querySelector(".message");
 const score = document.querySelector(".scores");
 const highscore = document.querySelector(".highscoreNum");
-const scores = 20;
+let scores = 20;
 
 let number = document.querySelector(".number");
 let num = Math.trunc(Math.random() * 20) + 1;
